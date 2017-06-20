@@ -5,19 +5,70 @@
  */
 package tarea1.brizuelaruizesau;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author root
+ * @author esau_br
  */
 public class main {
 
     /**
-     * @param args the command line arguments
+     * Este proyecto es para probar el uso de colecciones en las estruturas de datos
+     * en este caso ArrayList
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+  
+            
+        
+    
+        
+        
+        
     }
     
+    
+    public static boolean eliminaValor(ArrayList<String> val, String s){
+       
+        boolean resultado;
+        resultado = val.remove(s);
+ 
+        return resultado;
+        
+    }
+    
+    public static boolean agregaValor(ArrayList<String> val, String s){
+       
+        boolean resultado;
+        resultado = val.add(s);
+ 
+        return resultado;
+        
+    }
+    
+    public static boolean buscador(ArrayList<String> val, String s){
+       
+        boolean resultado;
+        resultado = val.contains(s);
+ 
+        return resultado;
+        
+    }
+    
+    public static void modifica(ArrayList<String> val, String s1,String s2){
+       
+        boolean resultado;
+        int pos;
+        String mensaje ;
+        Object s;
+       pos =  (val.indexOf(s1));       
+       
+       mensaje = (pos>0)?val.set(pos,s2):"valor no existe";
+     
+       
+        
+        
+    }
     
     
 }
