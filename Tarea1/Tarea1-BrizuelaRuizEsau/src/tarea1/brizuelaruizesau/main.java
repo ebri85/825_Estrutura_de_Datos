@@ -6,6 +6,7 @@
 package tarea1.brizuelaruizesau;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -16,6 +17,7 @@ public class main {
     /**
      * Este proyecto es para probar el uso de colecciones en las estruturas de datos
      * en este caso ArrayList
+     * @param args
      */
     public static void main(String[] args) {
   
@@ -24,6 +26,26 @@ public class main {
     
         
         
+        
+    }
+    
+    public static int Opcionmenu(){
+        int resultado=0;
+        Scanner entrada = new Scanner(System.in);
+        
+        
+        
+        String menu= "Sistema de Prueba de ArrayList";
+        
+        menu+= "1 - Agrega Dato";
+        menu+= "2 - Elimina Dato";
+        menu+= "3 - Reemplaza Valor";
+        
+        System.out.println(menu);
+        
+        resultado = entrada.nextInt();
+        
+        return resultado;
         
     }
     
@@ -64,9 +86,7 @@ public class main {
        pos =  (val.indexOf(s1));       
        
        mensaje = (pos>0)?val.set(pos,s2):"valor no existe";
-     
-       
-        
+
         
     }
     
