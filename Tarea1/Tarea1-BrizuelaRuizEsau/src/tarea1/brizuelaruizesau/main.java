@@ -115,14 +115,14 @@ public class main {
         
     }
     
-    //Metodo para eliminar valor usando recursividad retorna mensaje de cuando se logra removel el elemento
+    //Metodo para eliminar valor usando recursividad retorna mensaje de cuando se logra remover el elemento
     public static void eliminaValor(ArrayList<String> val, int i, String valor) {
-       //String resultado= null;
+       
         try {
 
             String temp = val.get((i+1)-1);
             
-            if((temp.equals(valor.toLowerCase()))){
+            if(temp.equals(valor.toLowerCase())){
                 
                 val.remove(temp);
                String resultado = "Se elimino satisfactoriamente el valor :" + valor.toUpperCase() + "\n";
@@ -198,10 +198,7 @@ public class main {
         Scanner entrada = new Scanner(System.in);
         int pos = 0;
         try {
-            
-           
-            
-         
+
             System.out.println("Digite la palabra que desea reemplazar en la coleccion \n");
                 dato1 = entrada.nextLine();
             
