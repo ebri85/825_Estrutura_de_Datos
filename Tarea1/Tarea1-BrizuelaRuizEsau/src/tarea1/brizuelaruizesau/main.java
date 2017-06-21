@@ -24,7 +24,8 @@ public class main {
           Scanner entrada = new Scanner(System.in);
           int opcion;
          
-          char op = 0;
+          char op;
+          
           String mensaje = "";
           
           
@@ -68,7 +69,12 @@ public class main {
                       
                       
                   case 0:
-                      System.out.close();
+                      
+                      System.exit(0);
+                      break;
+                      
+                  default:
+                      
                       break;
 
                   
