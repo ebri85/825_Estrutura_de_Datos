@@ -5,8 +5,10 @@
  */
 package tarea1.brizuelaruizesau;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
@@ -26,6 +28,8 @@ public class main {
           String op1, op2,op3, op4;
           char op = 0;
           String mensaje = "";
+          int i = 0;
+          String dato ="";         
           
           
           ArrayList<String>palabras;
@@ -43,8 +47,11 @@ public class main {
                       break;
                       
                   case 2 :
+                       Scanner entrada2 = new Scanner(System.in);
+                        System.out.println("Digite la palabra que desea eliminar de la coleccion \n");
+                            dato = entrada2.nextLine();
 
-                      System.out.println(eliminaValor(palabras));
+                      eliminaValor(palabras,i,dato);
                       break;
                       
                   case 3 :
@@ -59,7 +66,12 @@ public class main {
                       
                   case 0:
                       
+                      System.exit(0);
+                      
                       break;
+                  default:
+                      
+                  break;
 
                   
               }
@@ -69,14 +81,16 @@ public class main {
 
             
         } catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println("Por favor revise el error " + e.getMessage());
         }
 
     }
     
     public static int OpcionMenu(){
-        int resultado=0;
-        Scanner entrada = new Scanner(System.in);
+       int resultado=0;
+      try{
+    
+           Scanner entrada = new Scanner(System.in);
         
         
         
@@ -91,30 +105,41 @@ public class main {
         System.out.println(menu);
         
         resultado = entrada.nextInt();
+          
+          
+      }   catch (Exception e){
+            System.out.println("Por favor revise el error " + e.getMessage());
+        }       
         
         return resultado;
         
     }
     
-    //Metodo para eliminar valor, retorna el resultado de la operacion
-    public static String eliminaValor(ArrayList<String> val){
-       String resultado = "";
+    //Metodo para eliminar valor usando recursividad retorna mensaje de cuando se logra removel el elemento
+    public static void eliminaValor(ArrayList<String> val, int i, String valor) {
+       //String resultado= null;
         try {
+
+            String temp = val.get((i+1)-1);
             
-            String dato ="";
-            Scanner entrada = new Scanner(System.in);
-            System.out.println("Digite la palabra que desea eliminar de la coleccion \n");
-                dato = entrada.nextLine();
-                      
-            String mensaje = "Se elimino la palabra " + dato.toUpperCase() + " de la coleccion \n";
-                resultado = (val.remove(dato.toLowerCase()))?mensaje:"Error no se pudo eliminar, valide si la palabra existe \n";
-     
-            }catch(Exception e){
-                System.out.println(e.getMessage());
-           
+            if((temp.equals(valor.toLowerCase()))){
+                
+                val.remove(temp);
+               String resultado = "Se elimino satisfactoriamente el valor :" + valor.toUpperCase() + "\n";
+               System.out.println(resultado);
+                
+            } else { 
+                
+             eliminaValor(val, ++i, valor);
+            
+            }
+
+        }catch (IndexOutOfBoundsException e){
+            
+                System.out.println("La Palabra "+valor.toUpperCase()+" digitada no se encuentra en la Coleccion");
+
          }
-       
-          return resultado;
+
     }
     
     //Metodo para agregar Palabras a la coleccion
