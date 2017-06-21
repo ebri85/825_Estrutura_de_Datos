@@ -23,7 +23,7 @@ public class main {
         try {
           Scanner entrada = new Scanner(System.in);
           int opcion;
-          String op1, op2,op3, op4;
+         
           char op = 0;
           String mensaje = "";
           
@@ -57,8 +57,18 @@ public class main {
                       System.out.println(Modificar(palabras));
                       break;
                       
-                  case 0:
+                  case 5:
                       
+                      for(String palabra:palabras){
+                          
+                          System.out.println(palabra);
+
+                        }
+                      break;
+                      
+                      
+                  case 0:
+                      System.out.close();
                       break;
 
                   
@@ -76,22 +86,30 @@ public class main {
     
     public static int OpcionMenu(){
         int resultado=0;
-        Scanner entrada = new Scanner(System.in);
+        
+        try {
+            Scanner entrada = new Scanner(System.in);
         
         
         
-        String menu= "Sistema de Prueba de ArrayList \n\n";
+            String menu= "Sistema de Prueba de ArrayList \n\n";
         
-        menu+= "1 - Agrega Palabra \n";
-        menu+= "2 - Elimina Palabra\n";
-        menu+= "3 - Buscar Palabra \n";
-        menu+= "4 - Reemplaza Valor \n";
-        menu+= "0 = Salir";
+            menu+= "1 - Agrega Palabra \n";
+            menu+= "2 - Elimina Palabra\n";
+            menu+= "3 - Buscar Palabra \n";
+            menu+= "4 - Reemplaza Valor \n";
+            menu+= "5 - Muestra Contenido \n";
+            menu+= "0 = Salir";
         
-        System.out.println(menu);
+                System.out.println(menu);
         
-        resultado = entrada.nextInt();
+            resultado = entrada.nextInt();
         
+            
+       } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+       
         return resultado;
         
     }
@@ -211,3 +229,4 @@ public class main {
     
     
 }
+
