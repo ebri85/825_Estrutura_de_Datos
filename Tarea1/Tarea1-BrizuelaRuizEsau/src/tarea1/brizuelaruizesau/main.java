@@ -210,8 +210,7 @@ public class main {
                 pos =  (val.indexOf(dato1.toLowerCase()));       
        
             if(pos>0){
-                
-                
+
               val.set(pos,dato2.toLowerCase());
               mensaje = "Se reemplazo de forma satisfactoria la palabra "+ dato1.toUpperCase()+ " por " + dato2.toUpperCase() + "\n";
            
